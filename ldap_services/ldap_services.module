@@ -1,0 +1,15 @@
+<?php
+
+function ldap_services_enable() {
+  cache_clear_all('services:methods', 'cache');
+}
+function ldap_services_disable() {
+  cache_clear_all('services:methods', 'cache');
+}
+
+function ldap_services_services_resources_alter(&$resources, $endpoint) {
+  if ($resources['user']['actions']['login']['callback']=='_user_resource_login') {
+    $resources['user']['actions']['login']['callback'] = '_ldap_services_user_resource_login';
+    $resources['user']['actions']['login']['file'] =  array('type' => 'inc', 'module' => 'ldap_services', 'name' => 'ldap_services');
+  }
+}
