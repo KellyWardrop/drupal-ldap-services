@@ -1,5 +1,5 @@
 name = Ldap Services
-description = Creates a service for the Ldap module for the user login resource -- package with current McKinsey LDAP.
+description = Creates a service for the Ldap module for the user login resource -- package with current LDAP module.
 core = 7.x
 package = Services - authentication
 dependencies[] = services
