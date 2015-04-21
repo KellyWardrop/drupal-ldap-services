@@ -7,7 +7,7 @@
  *  
  */
 function _ldap_services_user_resource_login($username, $password) {
-  watchdog("user","JH LDAP services called");
+  watchdog("user","Hey LDAP user, services called");
   global $user;
   if ($user->uid) {
     return services_error(t('Already logged in as @user.', array('@user' => $user->name)), 406);
